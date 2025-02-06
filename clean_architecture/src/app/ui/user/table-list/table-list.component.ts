@@ -12,16 +12,16 @@ import { Router } from '@angular/router';
   templateUrl: './table-list.component.html',
   styleUrl: './table-list.component.scss',
 })
-export class TableListComponent  implements OnInit{
+export class TableListComponent implements OnInit {
   displayedColumns: string[] = ['id', 'name', 'email', 'actions'];
   dataSource = new MatTableDataSource<User>([]);
 
-  constructor(private getAllUseCase : GetUsersUseCase, private deleteUserUseCase: DeleteUserUseCase, private router: Router){
-   
+  constructor(private getAllUseCase: GetUsersUseCase, private deleteUserUseCase: DeleteUserUseCase, private router: Router) {
+
   }
   ngOnInit(): void {
     this.getAllUseCase.execute().subscribe(
-      (users: User[])=>{
+      (users: User[]) => {
         console.log(users)
         this.dataSource.data = users
       },
@@ -45,8 +45,8 @@ export class TableListComponent  implements OnInit{
   deleteUser(id: number): void {
     showDeleteConfirmation(id, this.deleteUserById.bind(this));  // Pasar la función como callback
   }
-  callWindowUpdateUser(id: number):void{
-    this.router.navigate(['/update-user',id]); 
+  callWindowUpdateUser(id: number): void {
+    this.router.navigate(['/update-user', id]);
 
   }
 

@@ -4,6 +4,7 @@ import { UserService } from '../../../core/user/services/user.service';
 import { User } from '../../../core/user/models/user.model';
 import { AddUserUseCase } from '../../../core/user/use-cases/add-user.use_case';
 import { showCreateUserAlert } from '../../helpers/user.helpers';
+import { Router } from '@angular/router';
 
 
 @Component({
@@ -19,7 +20,7 @@ export class CreateUserTemplateComponent {
     email: '',
   };
 
-  constructor(private createUser: AddUserUseCase ){}
+  constructor(private createUser: AddUserUseCase,private router: Router ){}
 
   onSubmit(): void {
     if (this.user.name && this.user.email){
@@ -28,6 +29,7 @@ export class CreateUserTemplateComponent {
         () => {
           showCreateUserAlert('success'); // Mensaje de éxito
           this.user = { id: 0, name: '', email: '' }; // Limpiar formulario
+          this.router.navigate(['']); 
         },
         () => {
           showCreateUserAlert('error'); // Mensaje de error
