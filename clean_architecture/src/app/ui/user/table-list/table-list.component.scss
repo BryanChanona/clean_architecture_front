@@ -1,0 +1,52 @@
+.header {
+    margin-bottom: 4px; /* Ajusta el valor según el espacio que desees */
+  }
+
+
+/* Ajustar el tamaño de la tabla */
+.tableList table {
+    border: 1px solid #ccc; /* Borde de la tabla */
+    border-collapse: collapse; /* Asegura que los bordes de las celdas se combinen */
+    width: auto; /* Cambiar a 'auto' para que no ocupe todo el ancho disponible */
+    margin: 0 auto; /* Centrar la tabla en la página */
+    font-size: 14px; /* Reducir el tamaño de la fuente */
+  }
+
+  .tableList th{
+    background-color: #333;
+    color: white;
+  }
+
+
+  
+  /* Agregar borde a las celdas de la tabla */
+  .tableList th, .tableList td {
+    border: 1px solid #ddd; /* Borde para las celdas */
+    padding: 6px 10px; /* Reducir el padding */
+    text-align: left; /* Alinear texto a la izquierda */
+  }
+
+  
+  /* Ajustar la altura de las filas */
+  .tableList tr {
+    height: 35px; /* Reducir la altura de las filas */
+  }
+  
+  /* Ajustar el ancho de las columnas */
+  .tableList th, .tableList td {
+    width: 80px; /* Ajustar el ancho de cada columna */
+  }
+  .button {
+    
+    padding: 8px 16px;
+    margin: 5px;
+    background-color: #4b4f53;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+  }
+  
+  .button:hover {
+    background-color: #4682b4;
+  }

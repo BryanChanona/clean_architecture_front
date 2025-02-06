@@ -1,17 +1,15 @@
 import { Injectable } from '@angular/core';
-import { Observable } from 'rxjs';
 import { User } from '../models/user.model';
+import { Observable } from 'rxjs';
 import { UserRepository } from '../repositories/user.repository';
-
 
 @Injectable({
   providedIn: 'root'
 })
-export class AddUserUseCase {
+export class deleteUserUseCase {
   constructor(private userService: UserRepository) {}
 
-  execute(user:User): Observable<void> {
-    return this.userService.addUser(user); 
+  execute(id: number): Observable<User> {
+    return this.userService.getUserById(id) // Devuelve un Observable<User[]>
   }
 }
-
