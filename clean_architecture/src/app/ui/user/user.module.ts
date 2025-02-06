@@ -7,15 +7,16 @@ import { UserService } from '../../core/user/services/user.service';
 import { HttpClientModule } from '@angular/common/http';
 import { HomeComponent } from './pages/home/home.component';
 import { HeaderComponent } from '../shared/header/header.component';
+import { FooterComponent } from '../shared/footer/footer.component';
 
 @NgModule({
   providers:[{provide:UserRepository, useClass:UserService}],
   declarations: [
     TableListComponent,
-    HomeComponent,HeaderComponent
+    HomeComponent,HeaderComponent,FooterComponent
   ],
   imports: [
     CommonModule,MatTableModule,HttpClientModule 
-  ],exports:[MatTableModule,TableListComponent,HeaderComponent]
+  ],exports:[MatTableModule,TableListComponent,HeaderComponent,FooterComponent]
 })
 export class UserModule { }
