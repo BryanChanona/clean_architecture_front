@@ -1,9 +1,10 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
-import { TableListComponent } from './ui/user/table-list/table-list.component';
+import { HomeComponent } from './ui/user/pages/home/home.component';
+
 
 const routes: Routes = [
-  {path:'',component:TableListComponent}
+  {path:'',component:HomeComponent}
 ];
 
 @NgModule({
