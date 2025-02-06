@@ -25,6 +25,22 @@ export class UserService extends UserRepository {
             }) // Extrae el array "users"
         );
     }
+    addUser(user: User): Observable<void> {
+        return this.http.post<void>(this.apiUrl, user); // No se envía 'id', solo 'name' y 'email'
+      }
+      deleteUser(id: number): Observable<void> {
+        const url = `${this.apiUrl}${id}`; 
+        return this.http.delete<void>(url)
+      }
+      updateUser(id: number, user: User): Observable<void> {
+        const url = `${this.apiUrl}${id}`; 
+        return this.http.put<void>(url, user);
+    }
+    getUserById(id: number): Observable<User> {
+        const url = `${this.apiUrl}${id}`; 
+        return this.http.get<User>(url); 
+      }
+    
 
 
 
