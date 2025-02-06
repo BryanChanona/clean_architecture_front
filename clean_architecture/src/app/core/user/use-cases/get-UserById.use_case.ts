@@ -6,7 +6,7 @@ import { UserRepository } from '../repositories/user.repository';
 @Injectable({
   providedIn: 'root'
 })
-export class deleteUserUseCase {
+export class getUserByIdUseCase {
   constructor(private userService: UserRepository) {}
 
   execute(id: number): Observable<User> {

@@ -4,6 +4,7 @@ import { MatTableDataSource } from '@angular/material/table';
 import { User } from '../../../core/user/models/user.model';
 import { DeleteUserUseCase } from '../../../core/user/use-cases/delete-user.use_case';
 import { showDeleteConfirmation } from '../../helpers/user.helpers';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-table-list',
@@ -15,7 +16,7 @@ export class TableListComponent  implements OnInit{
   displayedColumns: string[] = ['id', 'name', 'email', 'actions'];
   dataSource = new MatTableDataSource<User>([]);
 
-  constructor(private getAllUseCase : GetUsersUseCase, private deleteUserUseCase: DeleteUserUseCase){
+  constructor(private getAllUseCase : GetUsersUseCase, private deleteUserUseCase: DeleteUserUseCase, private router: Router){
    
   }
   ngOnInit(): void {
@@ -43,6 +44,10 @@ export class TableListComponent  implements OnInit{
   // Llamada al helper para mostrar la confirmación de eliminación
   deleteUser(id: number): void {
     showDeleteConfirmation(id, this.deleteUserById.bind(this));  // Pasar la función como callback
+  }
+  callWindowUpdateUser(id: number):void{
+    this.router.navigate(['/update-user',id]); 
+
   }
 
 }

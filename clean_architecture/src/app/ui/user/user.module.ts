@@ -10,12 +10,15 @@ import { HeaderComponent } from '../shared/header/header.component';
 import { FooterComponent } from '../shared/footer/footer.component';
 import { CreateUserTemplateComponent } from './create-user.template/create-user.template.component';
 import { FormsModule } from '@angular/forms';
+import { UpdateUserComponent } from './update-user/update-user.component';
+
+
 
 @NgModule({
   providers:[{provide:UserRepository, useClass:UserService}],
   declarations: [
     TableListComponent,
-    HomeComponent,HeaderComponent,FooterComponent, CreateUserTemplateComponent
+    HomeComponent,HeaderComponent,FooterComponent, CreateUserTemplateComponent, UpdateUserComponent
   ],
   imports: [
     CommonModule,MatTableModule,HttpClientModule,FormsModule
