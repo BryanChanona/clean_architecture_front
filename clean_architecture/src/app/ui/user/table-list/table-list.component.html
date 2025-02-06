@@ -28,7 +28,7 @@
                 <th mat-header-cell *matHeaderCellDef> Actions </th>
                 <td mat-cell *matCellDef="let user">
                     <button   (click)="deleteUser(user.id)"  class="button">Eliminar</button> 
-                    <button   class="button">Actualizar</button> 
+                    <button (click)="callWindowUpdateUser(user.id)"  class="button">Actualizar</button> 
 
                 </td>
             </ng-container>
