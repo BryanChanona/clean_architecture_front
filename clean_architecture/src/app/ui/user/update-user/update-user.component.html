@@ -1,9 +1,8 @@
 <div class="contentTemplate">
     <div class="form-container">
       <p class="title">Update user</p>
-      <input type="text" placeholder="name">
-      <input type="text" placeholder="email">
-      <button  class="form-btn" type="button">Accept</button>
+      <input type="text" placeholder="name" [(ngModel)]="user.name" name="name" required>
+      <input type="text" placeholder="email" [(ngModel)]="user.email" name="email" required>
+      <button (click)="updateUser()" class="form-btn" type="button">Accept</button>
     </div>
-  </div>
-  
+</div>
